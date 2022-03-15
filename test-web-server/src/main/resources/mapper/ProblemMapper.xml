@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.ojsystem.mapper.ProblemMapper">
+    <resultMap id="BaseResultMap" type="com.example.ojsystem.pojo.Problem">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="level" property="level" jdbcType="VARCHAR"/>
+    </resultMap>
+    <resultMap id="ResultMapWithBLOBs" type="com.example.ojsystem.pojo.Problem" extends="BaseResultMap">
+        <result column="description" property="description" jdbcType="LONGVARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, title, level,
+    </sql>
+    <sql id="Blob_Column_List">
+        description
+    </sql>
+
+    <insert id="insert" parameterType="com.example.ojsystem.pojo.Problem" useGeneratedKeys="true" keyProperty="id">
+        insert into problem
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="level != null">
+                level,
+            </if>
+            <if test="description != null">
+                description,
+            </if>
+        </trim>
+        <trim prefix=" values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="title != null">
+                #{title},
+            </if>
+            <if test="level != null">
+                #{level},
+            </if>
+            <if test="description != null">
+                #{description},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.example.ojsystem.pojo.Problem">
+        update problem
+        <set>
+            <if test="title != null">
+                title = #{title},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="description != null">
+                description = #{description},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete
+        from problem
+        where id = #{id}
+    </delete>
+
+    <select id="selectProblemByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"></include>
+        from problem
+        where id = #{id}
+    </select>
+
+    <select id="selectAllProblem" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"></include>
+        <include refid="Blob_Column_List"></include>
+        from problem
+    </select>
+
+    <select id="selectProblemByLevel" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"></include>
+        from problem
+        where level = #{level}
+    </select>
+
+    <select id="selectProblemByTitleLike" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"></include>
+        from problem
+        where title like #{title}
+    </select>
+</mapper>

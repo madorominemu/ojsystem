@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.ojsystem.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.example.ojsystem.pojo.User" >
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="sex" property="sex" jdbcType="TINYINT"/>
+        <result column="birth" property="birth" jdbcType="TIMESTAMP"/>
+        <result column="phone_num" property="phoneNum" jdbcType="CHAR"/>
+        <result column="location" property="location" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="CHAR"/>
+        <result column="introduction" property="introduction" jdbcType="VARCHAR"/>
+        <result column="avatar" property="avatar" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, username, password, sex, birth, phone_num, location, email, introduction, avatar, create_time, update_time
+    </sql>
+
+    <insert id="insert" parameterType="com.example.ojsystem.pojo.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="birth != null">
+                birth,
+            </if>
+            <if test="phoneNum != null">
+                phone_num,
+            </if>
+            <if test="location != null">
+                location,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="introduction != null">
+                introduction,
+            </if>
+            <if test="avatar != null">
+                avatar,
+            </if>
+            create_time,update_time
+        </trim>
+        <trim prefix=" values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="username != null">
+                #{username},
+            </if>
+            <if test="password != null">
+                #{password},
+            </if>
+            <if test="sex != null">
+                #{sex},
+            </if>
+            <if test="birth != null">
+                #{birth},
+            </if>
+            <if test="phoneNum != null">
+                #{phoneNum},
+            </if>
+            <if test="location != null">
+                #{location},
+            </if>
+            <if test="email != null">
+                #{email},
+            </if>
+            <if test="introduction != null">
+                #{introduction},
+            </if>
+            <if test="avatar != null">
+                #{avatar},
+            </if>
+            now(),now(),
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.example.ojsystem.pojo.User">
+        update user
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="username != null">
+                username = #{username},
+            </if>
+            <if test="password != null">
+                password = #{password},
+            </if>
+            <if test="sex != null">
+                sex = #{sex},
+            </if>
+            <if test="birth != null">
+                birth = #{birth},
+            </if>
+            <if test="phoneNum != null">
+                phone_num = #{phoneNum},
+            </if>
+            <if test="location != null">
+                location = #{location},
+            </if>
+            <if test="email != null">
+                email = #{email},
+            </if>
+            <if test="introduction != null">
+                introduction = #{introduction},
+            </if>
+            <if test="avatar != null">
+                avatar = #{avatar},
+            </if>
+            update_time = now(),
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from user
+        where id = #{id}
+    </delete>
+
+    <select id="selectUserByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where id = #{id}
+    </select>
+
+    <select id="selectAllUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+    </select>
+
+    <select id="selectUserByUsername" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from user
+        where username = #{username}
+    </select>
+
+    <select id="verifyPassword" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+        select count(*) from user where username=#{username} and password=#{password}
+    </select>
+</mapper>
