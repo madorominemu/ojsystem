@@ -168,4 +168,15 @@
       }
     }
   }
+  .login-signup {
+    display: flex;
+    align-items: center;
+
+    .navbar-menu-item {
+      color: rgba(239,241,246, .75);
+      overflow: hidden;
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  }
 }

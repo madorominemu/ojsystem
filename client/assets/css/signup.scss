@@ -1,0 +1,114 @@
+.SignInBox {
+  width: 384px;
+  border-radius: 21px;
+  border: 1px solid rgba(66,66,66, 1);
+  background: rgba(48,48,48, 1);
+  box-shadow: 0px 1px 2px rgba(0,0,0, 0.3),0px 12px 24px rgba(0,0,0, 0.72);
+  margin: 0px auto;
+}
+.Container {
+  max-width: 384px;
+  padding: 24px 32px 32px;
+  position: relative;
+  z-index: 0;
+}
+.InputContainer {
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+  touch-action: manipulation;
+
+  .username {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: rgba(63,63,63, 1);
+    color: rgba(255,255,255, 1);
+    outline: none;
+    transition: all 0.3s ease 0s;
+    line-height: 22px;
+    border-radius: 8px !important;
+    background: rgba(255,255,255, 0.07);
+    font-size: 14px;
+    padding: 8px 12px;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+  }
+  .username:hover {
+    border-color: rgba(36,97,159, 1);
+  }
+  .password {
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-image: initial;
+    border-color: rgba(63,63,63, 1);
+    color: rgba(255,255,255, 1);
+    outline: none;
+    transition: all 0.3s ease 0s;
+    line-height: 22px;
+    border-radius: 8px !important;
+    background: rgba(255,255,255, 0.07);
+    font-size: 14px;
+    padding: 8px 12px;
+    overflow: visible;
+    margin: 0;
+    font-family: inherit;
+  }
+  .password:hover {
+    border-color: rgba(36,97,159, 1);
+  }
+  input:focus {
+    border-color: rgba(10,132,255, 1);
+    box-shadow: rgb(0 122 255 / 30%) 0px 0px 0px 2px;
+    background: rgba(255,255,255,0.07);
+    caret-color: rgba(255,255,255, 1);
+  }
+  input:focus:hover {
+    border-color: rgba(10,132,255, 1);
+    box-shadow: rgb(0 122 255 / 30%) 0px 0px 0px 2px;
+    background: rgba(255,255,255,0.07);
+    caret-color: rgba(255,255,255, 1);
+  }
+  //input {
+  //border-color: rgba(10,132,255, 1);
+  //box-shadow: rgb(0 122 255 / 30%) 0px 0px 0px 2px;
+  //background: rgba(255,255,255,0.07);
+  //  caret-color: rgba(255,255,255, 1);
+  //}
+}
+.StyledButton {
+  background: rgba(255,161,22, 1);
+  color: rgba(24,26,31, 1);
+  border: none;
+  outline: none;
+  user-select: none;
+  text-decoration: none;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+  opacity: 1;
+  font-size: 14px;
+  padding: 8px 12px;
+  margin: 8px 0px 16px;
+  border-radius: 8px;
+  line-height: 22px;
+  font-weight: 500;
+}
+.StyledButton:hover {
+  background: rgba(255,180,69, 1);
+}
+.goto {
+  margin: 0px auto;
+  color: rgba(239,241,246,0.75);
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+}

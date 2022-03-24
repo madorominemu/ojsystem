@@ -288,6 +288,7 @@
 <script>
 import {getAllProblem} from '../api/index'
 export default {
+  name: 'problemset',
   data() {
     return {
       problemListItems: [
