@@ -25,26 +25,6 @@
 		</div>
 		<div class="container swiper swiper-initialized swiper-horizontal swiper-pointer-events">
 			<swiper></swiper>
-<!--			<div class="swiper-wrapper" style="transform: translate3d(-872px, 0px, 0px); transition-duration: 0ms;">-->
-<!--				<div class="swiper-slide swiper-slide-duplicate w-auto" data-swiper-slide-index="3" style="width: 266.667px; margin-right: 24px;">-->
-<!--					<a class="flex flex-col" href="https://leetcode-cn.com/leetbook/detail/dynamic-programming-1-plus/" aria-label="动态规划（一）">-->
-<!--					<div class="h-[100px] w-[200px] md:aspect-w-2 md:aspect-h-1 md:h-auto md:w-auto">-->
-<!--						<span class="relative inline-block overflow-hidden rounded md:rounded-[13px] shadow-level1 dark:shadow-dark-level1">-->
-<!--							<img src="require('./src/assets/img/CarouselPic1.jpg')" class="object-cover md:h-full md:w-full h-[100px] w-[200px]" alt="动态规划（一）">-->
-<!--						</span>-->
-<!--					</div>-->
-<!--					</a>-->
-<!--				</div>-->
-<!--				<div class="swiper-slide w-auto" data-swiper-slide-index="3" style="width: 266.667px; margin-right: 24px;">-->
-<!--					<a class="flex flex-col" href="https://leetcode-cn.com/leetbook/detail/dynamic-programming-1-plus/" aria-label="动态规划（一）">-->
-<!--					<div class="h-[100px] w-[200px] md:aspect-w-2 md:aspect-h-1 md:h-auto md:w-auto">-->
-<!--						<span class="relative inline-block overflow-hidden rounded md:rounded-[13px] shadow-level1 dark:shadow-dark-level1">-->
-<!--							<img src="require('./src/assets/img/CarouselPic1.jpg')" class="object-cover md:h-full md:w-full h-[100px] w-[200px]" alt="动态规划（一）">-->
-<!--						</span>-->
-<!--					</div>-->
-<!--					</a>-->
-<!--				</div>-->
-<!--			</div>-->
 		</div>
 	</div>
 </template>
