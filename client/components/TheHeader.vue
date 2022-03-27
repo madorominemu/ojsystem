@@ -109,6 +109,7 @@ export default {
   methods: {
     logout() {
       this.$store.commit('setLoginIn', false);
+      this.show = false;
       window.sessionStorage.clear();
       window.localStorage.clear();
       // this.$router.go(0);
